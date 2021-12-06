@@ -266,6 +266,11 @@ def colormap(dz):
 def recover_image(img, min_val=-1, max_val=1, width=512, bg=None, weight=None, raw=False):
     if raw: return img
 
+    if torch.is_tensor(min_val):
+        min_val = min_val.float().to('cpu')
+    if torch.is_tensor(max_val):
+        max_val = min_val.float().to('cpu')
+
     sizes = img.size()
     height = sizes[0] // width
     img = img.float().to('cpu')
