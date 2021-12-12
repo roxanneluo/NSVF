@@ -45,7 +45,9 @@ Only learning and rendering on GPUs are supported.
 To install, first clone this repo and install all dependencies:
 
 ```bash
+conda create --name NSVF --file spec-file.txt
 pip install -r requirements.txt
+pip install numpy --upgrade
 ```
 
 Then,  run
